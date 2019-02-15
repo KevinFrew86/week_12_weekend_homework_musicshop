@@ -9,7 +9,7 @@ public class BrassTest {
 
     @Before
     public void before() {
-        brass = new Brass("Holton", "T101", "Trumpet", "Gold", "Brass", 600, 900, 3);
+        brass = new Brass("Holton", "T101", "Trumpet", "Gold", "Brass", "TOOT TOOT",600, 900, 3);
     }
 
     @Test
@@ -38,6 +38,11 @@ public class BrassTest {
     }
 
     @Test
+    public void hasNoise() {
+        assertEquals("TOOT TOOT", brass.getNoise());
+    }
+
+    @Test
     public void hasWholesalelPrice() {
         assertEquals(600, brass.getWholesale());
     }
@@ -51,4 +56,10 @@ public class BrassTest {
     public void hasNumOfValves() {
         assertEquals(3, brass.getNumOfValves());
     }
+
+    @Test
+    public void canCalculateMarkUp() {
+        assertEquals(300, brass.calculateMarkUp(600, 900));
+    }
+
 }

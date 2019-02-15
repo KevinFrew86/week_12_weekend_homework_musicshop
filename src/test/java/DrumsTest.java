@@ -9,7 +9,7 @@ public class DrumsTest {
 
     @Before
     public void before() {
-        drums = new Drums("Ludwig", "Vistalite", "Kick", "Blue", "Perspex", 1250, 2000);
+        drums = new Drums("Ludwig", "Vistalite", "Kick", "Blue", "Perspex", "BOOM BOOM",1250, 2000);
     }
 
     @Test
@@ -38,6 +38,11 @@ public class DrumsTest {
     }
 
     @Test
+    public void hasNoise() {
+        assertEquals("BOOM BOOM", drums.getNoise());
+    }
+
+    @Test
     public void hasWholesalelPrice() {
         assertEquals(1250, drums.getWholesale());
     }
@@ -47,5 +52,9 @@ public class DrumsTest {
         assertEquals(2000, drums.getRrp());
     }
 
+    @Test
+    public void canCalculateMarkUp() {
+        assertEquals(750, drums.calculateMarkUp(1250, 2000));
+    }
 
 }

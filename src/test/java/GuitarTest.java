@@ -9,7 +9,7 @@ public class GuitarTest {
 
     @Before
     public void before() {
-        guitar = new Guitar("Fender", "American Standard", "Mustang", "Sonic Blue", "Maple", 350, 500, 6);
+        guitar = new Guitar("Fender", "American Standard", "Mustang", "Sonic Blue", "Maple", "CHUGAWUGAWUGA",350, 500, 6);
     }
 
     @Test
@@ -38,6 +38,11 @@ public class GuitarTest {
     }
 
     @Test
+    public void hasNoise() {
+        assertEquals("CHUGAWUGAWUGA", guitar.getNoise());
+    }
+
+    @Test
     public void hasWholesalelPrice() {
         assertEquals(350, guitar.getWholesale());
     }
@@ -50,5 +55,10 @@ public class GuitarTest {
     @Test
     public void hasNumOfStrings() {
         assertEquals(6, guitar.getNumOfStrings());
+    }
+
+    @Test
+    public void canCalculateMarkUp() {
+        assertEquals(150, guitar.calculateMarkUp(350, 500));
     }
 }
