@@ -1,4 +1,4 @@
-public abstract class Instrument implements IPlay, ISell {
+public abstract class Instrument extends Item implements IPlay, ISell {
 
     private String make;
     private String model;
