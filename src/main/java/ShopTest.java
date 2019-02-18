@@ -6,6 +6,7 @@ import static org.junit.Assert.assertEquals;
 public class ShopTest {
 
     Shop shop;
+    Item item;
 
 
     @Before
@@ -15,7 +16,7 @@ public class ShopTest {
 
     @Test
     public void canAddItemsToArrayList() {
-        shop.addItem();
+        shop.addItem(item);
         assertEquals(1, shop.itemCount());
     }
 }
